@@ -15,7 +15,7 @@ addEventListener('DOMContentLoaded', (e) => {
 		if(fruitInput.length > 0){
 			search(fruitInput);
 		} else {
-			console.log('Remember to remove drop down when input is empty')
+			
 		}
 		
 	}
@@ -33,14 +33,16 @@ addEventListener('DOMContentLoaded', (e) => {
 	function showSuggestions(results, inputVal) {
 		const list = results.map((items) => {
 			return `<li>${items}</li>`;
-		}).join('');
+		});
 		
+
+
 		suggestions.innerHTML = `${list}`
 	}
 
 
 	function useSuggestion(e) {
-		input.value = e.target.innerHTML;
+		input.value = e.target.innerText;
 	}
 	
 });
