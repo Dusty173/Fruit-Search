@@ -33,11 +33,11 @@ addEventListener('DOMContentLoaded', (e) => {
 		suggestions.innerHTML = '';
 		
 
-		// for(item of results){
-		// 	let li = document.createElement('li');
-		// 	li.innerText = item;
-		// 	suggestions.appendChild(li);
-		// }
+		for(item of results){
+			let li = document.createElement('li');
+			li.innerText = item;
+			suggestions.appendChild(li);
+		}
 
 		// results.forEach(item => {
 		// 	let li = document.createElement('li');
