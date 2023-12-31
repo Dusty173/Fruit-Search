@@ -15,10 +15,11 @@ addEventListener('DOMContentLoaded', (e) => {
 		if(fruitInput.length > 0){
 			search(fruitInput);
 		} else {
-			console.log('Remember to clear out dropdown when empty!')
+			console.log('Remember to remove drop down when input is empty')
 		}
 		
 	}
+
 
 	function search(str) {
 		let results = [];
@@ -30,20 +31,16 @@ addEventListener('DOMContentLoaded', (e) => {
 
 
 	function showSuggestions(results, inputVal) {
-		for (let i = 0; i < results.length; i++){			
-			let item = document.createElement('li')
-			item.innerText = results[i];							// <------ Cannot figure out!?
-
-			suggestions.appendChild(item);
-			console.log(results)
-		};
+		const list = results.map((items) => {
+			return `<li>${items}</li>`;
+		}).join('');
+		
+		suggestions.innerHTML = `${list}`
 	}
 
 
 	function useSuggestion(e) {
-		
+		input.value = e.target.innerHTML;
 	}
-
-
-
+	
 });
