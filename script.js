@@ -31,18 +31,20 @@ addEventListener('DOMContentLoaded', (e) => {
 
 	function showSuggestions(results, inputVal) {
 		suggestions.innerHTML = '';
-		let li = document.createElement('li');
-
-
+		
 
 		// for(item of results){
+		// 	let li = document.createElement('li');
 		// 	li.innerText = item;
+		// 	suggestions.appendChild(li);
 		// }
-		
-		// results.forEach(element => {
-		// 	li.innerText = element;
+
+		// results.forEach(item => {
+		// 	let li = document.createElement('li');
+		// 	li.innerText = item;
+		// 	suggestions.appendChild(li)
 		// });
-		suggestions.appendChild(li);
+
 		suggestions.classList.add('has-suggestions')
 	}
 

@@ -16,9 +16,11 @@ body {
 }
 
 input {
+  margin: auto;
   width: 300px;
   padding: 20px;
   border: none;
+  display: inline-block;
 }
 
 .search-container {
@@ -27,27 +29,28 @@ input {
 }
 .search-container input,
 .search-container .suggestions {
-  border: 1px solid black;
-  border-radius: 5px;
-  max-width: 100%;
+  border: none;
+  max-width: 300px;
 }
 .search-container input {
- /* TODO */
+ display: block;
 }
 .search-container .suggestions {
-   /* TODO */
+  position: relative;
 }
 
 ul {
   padding: 0;
   margin: 0;
   list-style: none;
+  border: 1px solid orangered;
 }
 ul.has-suggestions {
   display: block;
 }
 ul li {
   padding: 10px;
+  background-color: rgba(204, 204, 204, 0.508);
 }
 ul li:hover {
   background-color: rgb(255, 85, 0);
