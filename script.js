@@ -8,41 +8,48 @@ addEventListener('DOMContentLoaded', (e) => {
 	input.addEventListener('keyup', searchHandler);
 	suggestions.addEventListener('click', useSuggestion);
 
-
-	function searchHandler(e) {
-		let fruitInput = input.value;
-		
-		if(fruitInput.length > 0){
-			search(fruitInput);
-		} else {
-			
-		}
-		
-	}
-
-
 	function search(str) {
 		let results = [];
 
 		results.push(fruit.filter((el) => el.toLowerCase().includes(str.toLowerCase())));
 		
-		showSuggestions(results,str)
+		return results
 	}
 
+	function searchHandler(e) {
+		let inputVal = e.target.value;
+		
+		if(inputVal){
+			let results = search(inputVal);
+			showSuggestions(results, inputVal);
+		} else {
+			suggestions.innerHTML = '';
+			suggestions.classList.remove('has-suggestions')
+		}
+		
+	}
 
 	function showSuggestions(results, inputVal) {
-		const list = results.map((items) => {
-			return `<li>${items}</li>`;
-		});
+		suggestions.innerHTML = '';
+		let li = document.createElement('li');
+
+
+
+		// for(item of results){
+		// 	li.innerText = item;
+		// }
 		
-
-
-		suggestions.innerHTML = `${list}`
+		// results.forEach(element => {
+		// 	li.innerText = element;
+		// });
+		suggestions.appendChild(li);
+		suggestions.classList.add('has-suggestions')
 	}
 
 
 	function useSuggestion(e) {
 		input.value = e.target.innerText;
+		suggestions.innerHTML = '';
 	}
 	
 });
