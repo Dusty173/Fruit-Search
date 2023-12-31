@@ -30,7 +30,13 @@ addEventListener('DOMContentLoaded', (e) => {
 
 
 	function showSuggestions(results, inputVal) {
-		// Stuck Here!!!!!!
+		for (let i = 0; i < results.length; i++){			
+			let item = document.createElement('li')
+			item.innerText = results[i];							// <------ Cannot figure out!?
+
+			suggestions.appendChild(item);
+			console.log(results)
+		};
 	}
 
 
