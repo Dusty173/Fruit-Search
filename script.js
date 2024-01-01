@@ -11,7 +11,8 @@ addEventListener('DOMContentLoaded', (e) => {
 	function search(str) {
 		let results = [];
 
-		results.push(fruit.filter((el) => el.toLowerCase().includes(str.toLowerCase())));
+		let filter = fruit.map(item => item).filter(item => item.toLowerCase().includes(str.toLowerCase()))
+		results = [...filter]
 		
 		return results
 	}
@@ -31,24 +32,16 @@ addEventListener('DOMContentLoaded', (e) => {
 
 	function showSuggestions(results, inputVal) {
 		suggestions.innerHTML = '';
-		
 
 		for(item of results){
 			let li = document.createElement('li');
 			li.innerText = item;
 			suggestions.appendChild(li);
 		}
-
-		// results.forEach(item => {
-		// 	let li = document.createElement('li');
-		// 	li.innerText = item;
-		// 	suggestions.appendChild(li)
-		// });
-
 		suggestions.classList.add('has-suggestions')
 	}
 
-
+	
 	function useSuggestion(e) {
 		input.value = e.target.innerText;
 		suggestions.innerHTML = '';
