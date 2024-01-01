@@ -1,18 +1,18 @@
 * {
   box-sizing: border-box;
+  font-weight: bold;
 }
 
 :focus {
- background-color: rgba(204, 204, 204, 0.508);
  outline: none;
 }
 
 body {
-  background: linear-gradient(90deg, rgb(255, 158,0), rgb(241,255,0));
   display: flex;
   margin: 0;
   justify-content: center;
   align-items: center;
+  background: linear-gradient(90deg, rgb(255, 158,0), rgb(241,255,0));
 }
 
 input {
@@ -21,6 +21,7 @@ input {
   padding: 20px;
   border: none;
   display: inline-block;
+  background: rgba(255,255,255,0.2);
 }
 
 .search-container {
@@ -54,7 +55,7 @@ ul.has-suggestions {
 }
 ul li {
   padding: 10px;
-  background-color: rgba(204, 204, 204, 0.508);
+  background-color: rgba(255, 255, 255, 0.2);
 }
 
 ul li:hover {
