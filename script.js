@@ -12,9 +12,8 @@ addEventListener('DOMContentLoaded', (e) => {
 		let results = [];
 
 		let filter = fruit.map(item => item).filter(item => item.toLowerCase().includes(str.toLowerCase()))
-		results = [...filter]
 		
-		return results
+		return filter
 	}
 
 	function searchHandler(e) {
